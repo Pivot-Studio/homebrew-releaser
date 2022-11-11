@@ -160,6 +160,7 @@ class {{class_name}} < Formula
     {{{install_instructions}}}
   end
   {{# test_instructions}}
+
   def caveats
     s = <<~EOS
     \033[0;32m安装完成，请运行下方命令添加环境变量\033[0m
@@ -170,6 +171,7 @@ class {{class_name}} < Formula
     EOS
     s
   end
+
   test do
     {{{test_instructions}}}
   end
@@ -215,7 +217,7 @@ end
             .replace('\n\n\n  on_linux', '\n\n  on_linux')
         )
 
-        logger.info('Homebrew formula generated successfully!')
+        logger.info('Homebrew formula generated successfully!xxx')
         logger.debug(rendered_template)
 
         return rendered_template
