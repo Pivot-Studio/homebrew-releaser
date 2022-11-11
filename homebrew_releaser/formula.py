@@ -159,7 +159,6 @@ class {{class_name}} < Formula
   def install
     {{{install_instructions}}}
   end
-  {{# test_instructions}}
 
   def caveats
     s = <<~EOS
@@ -171,6 +170,7 @@ class {{class_name}} < Formula
     EOS
     s
   end
+  {{# test_instructions}}
 
   test do
     {{{test_instructions}}}
@@ -181,7 +181,7 @@ end
 
         target_darwin = True if TARGET_DARWIN_AMD64 or TARGET_DARWIN_ARM64 else False
         target_linux = True if TARGET_LINUX_AMD64 or TARGET_LINUX_ARM64 else False
-
+        logger.debug(template)
         template_data = {
             'template': template,
             'data': {
